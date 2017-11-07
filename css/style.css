@@ -1,0 +1,90 @@
+/* selektor uniwersalny lapie wszystkie elementy na stronie */
+* {
+    font-size: 22px;
+}
+/* selektor znacznika lapie wszystkie okreslone znaczniki na stronie */
+p {
+    font-size: 16px;
+}
+body {
+    margin: 0;
+}
+/*selektor identyfikatora lapie element o określonym id */
+#universal {
+    background-color: gray;
+}
+
+/* selektor klasy lapie elementy o okreslonym atrybucie class */
+.class-selector {
+    background-color: beige;
+}
+/* mozemy laczyc selektor identyfikatora z selektorem klasy */
+#universal.blue {
+    background-color: blue;    
+}
+/*selektor bezposredniego potomka lapie elementy zagniezdzone BEZPOSREDNIO w elemencie */
+.potomek > p {
+    font-size: 30px;
+    text-align: center;
+}
+/* selektor potomka (ze spacja) lapie wszyskie zagniezdzone elementy */
+.potomek p {
+    font-size: 20px;
+}
+
+/*selektor bezposredniego rodzenstwa (znak+)lapie pierwsze wystapiene selektora na TYM SAMYM poziomie zagniezdzenia */
+.bezposrednie-rodzenstwo h2 + p {
+    color:violet;
+}
+/*selektor rodzenstwa (znak ~) zlapie WSZYSTKIE WYSTAPIENIA selektora na TYM SAMYM poziomie zagniezdzenia */
+.bezposrednie-rodzenstwo h2 ~ p {
+    color: red;
+}
+
+/* pozycjonowanie elementow */
+
+#pozycjonowanie {
+    height: 400px;
+    background-color: green;
+    position: relative;
+}
+
+/* pozycja relatywna zachowuje miejsce elementu, odsuwa element od elementu nadrzednego */
+
+/* element pozycjonowany ABSOLUTNIE ustawia sie wzgledem elementu nadrzednego, ktory jest pozycjonowany RELATYWNIE. Jezeli element nadrzedny nie jest pozycjonowany RELATYWNIE, to zawsze bedzie ustawial sie ABSOLUTNIE wzgledem elementu BODY. Dodatkowo, element pozycjonowany ABSOLUTNIE, NIE ZACHOWUJE MIEJSCA */
+
+/* Jezeli zmieniemy elementowi blokowemu wlasciowsci position na absolute lub fixed, to musimy pamietac  o tym, aby taki blok rozciagnac ponownie na 100% szerokosci */
+
+#pozycjonowanie .red {
+    background-color: red;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+#pozycjonowanie .blue {
+    background-color: blue
+}
+
+#pozycjonowanie .inner p {
+    margin: 0;
+    color: white;
+} 
+
+/* Jeżeli ustawiamy pozycje fixed, to ustawiamy element wzgledem okna przegladarki , dodatkow nalezy pamietac, aby ustawic top: 0 i left :0 i rozciagnac na 100 % */
+
+/* Kiedy zmieniamy pozycje elementowi na jakakolwiek (absolute, relative, fixed ), otrzymujemy dostep do zmian wlasciwosci */
+
+#main-nav {
+    background-color: aquamarine;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#main-nav ul {
+    margin: 0;
+}
+
